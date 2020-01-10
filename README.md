@@ -34,3 +34,5 @@ npm install inversify inversify-react reflect-metadata --save
 "emitDecoratorMetadata": true,
 "strictPropertyInitialization": false
 ```
+
+* **Step 4**: Create a `CounterService` class in a `services` folder.
