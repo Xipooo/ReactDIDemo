@@ -11,3 +11,11 @@ dotnet run
 Each step will be created within it's own branch of this repository and labeled accordingly.  You simply need to use the **Compare** option between branches to see the code that's been added.  Any additional information required for that step will be included in this document within that branch.
 
 Happy coding  :)
+
+## Steps
+
+* Step 1: Create project folder and run the following command from that folder:
+
+```text
+dotnet new reactredux
+```
