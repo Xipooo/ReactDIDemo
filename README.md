@@ -42,3 +42,11 @@ npm install inversify inversify-react reflect-metadata --save
 * **Step 6**: Modify [`App.tsx`](https://github.com/Xipooo/ReactDIDemo/blob/Step-6/ClientApp/src/App.tsx) to provide the container to the component tree and import `reflect-metadata`.
 
 * **Step 7**: Modify [`Counter.tsx`](https://github.com/Xipooo/ReactDIDemo/blob/Step-7/ClientApp/src/components/Counter.tsx) to property inject `CounterService` and leverage state for DOM updates.
+
+* **Step 8**: Run application
+  * Perform `dotnet run` command to start the application
+  * Open browser and devtools pane
+  * Enable `Disable cache (while DevTools is open)` under DevTools Settings
+  * Navigate to http://localhost:5001
+  * Navigate between Counter and Fetch Data components
+  * Notice state behavior on the Counter component.  This will become important later.
