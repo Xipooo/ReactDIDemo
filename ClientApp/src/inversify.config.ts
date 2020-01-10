@@ -3,5 +3,5 @@ import { Container } from 'inversify';
 import { CounterService } from './services/CounterService';
 
 let container = new Container();
-container.bind(CounterService).toSelf();
+container.bind(CounterService).toSelf().inSingletonScope();
 export { container };

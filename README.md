@@ -50,3 +50,5 @@ npm install inversify inversify-react reflect-metadata --save
   * Navigate to http://localhost:5001
   * Navigate between Counter and Fetch Data components
   * Notice state behavior on the Counter component.  This will become important later.
+
+* **Step 9**: Change `CounterService` registration to use .inSingletonScope() in `inversify.config.ts`.
