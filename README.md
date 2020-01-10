@@ -39,4 +39,4 @@ npm install inversify inversify-react reflect-metadata --save
 
 * **Step 5**: Create an IoC container in a new file called [`inversify.config.js`](https://github.com/Xipooo/ReactDIDemo/blob/Step-5/ClientApp/src/inversify.config.ts) within the `src` folder.
 
-* **Step 6**: Modify [`App.tsx`](https://github.com/Xipooo/ReactDIDemo/blob/Step-6/ClientApp/src/App.tsx) to provide the container to the component tree.
+* **Step 6**: Modify [`App.tsx`](https://github.com/Xipooo/ReactDIDemo/blob/Step-6/ClientApp/src/App.tsx) to provide the container to the component tree and import `reflect-metadata`.
