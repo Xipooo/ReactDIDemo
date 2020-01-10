@@ -11,3 +11,8 @@ dotnet run
 Each step will be created within it's own branch of this repository and labeled accordingly.  You simply need to use the **Compare** option between branches to see the code that's been added.  Any additional information required for that step will be included in this document within that branch.
 
 Happy coding  :)
+
+## Slides
+
+An accompanying slide deck for the introduction to the topic can be found here:
+[https://docs.google.com/presentation/d/1A1w9QAxg97kBTpPV5Gu-YfLT3BaD1duGINL5DuidCGk/edit?usp=sharing](https://docs.google.com/presentation/d/1A1w9QAxg97kBTpPV5Gu-YfLT3BaD1duGINL5DuidCGk/edit?usp=sharing)
