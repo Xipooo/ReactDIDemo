@@ -19,3 +19,9 @@ Happy coding  :)
 ```text
 dotnet new reactredux
 ```
+
+* **Step 2**: Run the following command from the ClientApp folder of the project:
+
+```text
+npm install inversify inversify-react reflect-metadata --save
+```
