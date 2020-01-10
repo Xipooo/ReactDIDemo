@@ -35,4 +35,4 @@ npm install inversify inversify-react reflect-metadata --save
 "strictPropertyInitialization": false
 ```
 
-* **Step 4**: Create a `CounterService` class in a `services` folder.
+* **Step 4**: Create a [`CounterService`](https://github.com/Xipooo/ReactDIDemo/blob/Step-4/ClientApp/src/services/CounterService.ts) class in a `services` folder.
