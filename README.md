@@ -25,3 +25,12 @@ dotnet new reactredux
 ```text
 npm install inversify inversify-react reflect-metadata --save
 ```
+
+* **Step 3**: Modify the tsconfig.json file by adding the following settings to the compilerOptions section:
+
+```text
+"types": ["reflect-metadata"],
+"experimentalDecorators": true,
+"emitDecoratorMetadata": true,
+"strictPropertyInitialization": false
+```
