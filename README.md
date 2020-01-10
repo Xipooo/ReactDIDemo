@@ -37,4 +37,4 @@ npm install inversify inversify-react reflect-metadata --save
 
 * **Step 4**: Create a [`CounterService`](https://github.com/Xipooo/ReactDIDemo/blob/Step-4/ClientApp/src/services/CounterService.ts) class in a `services` folder.
 
-* **Step 5**: Create an IoC container in a new file called [`inversify.config.js`](https://github.com/Xipooo/ReactDIDemo/blob/Step-5/ClientApp/src/inversify.config.ts) within the `src` folder.
+* **Step 5**: Create an IoC container in a new file called [`inversify.config.js`](https://github.com/Xipooo/ReactDIDemo/blob/Step-5/ClientApp/src/inversify.config.ts) within the `src` folder and register the `CounterService` class.
