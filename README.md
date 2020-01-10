@@ -14,7 +14,7 @@ Happy coding  :)
 
 ## Steps
 
-* Step 1: Create project folder and run the following command from that folder:
+* **Step 1**: Create project folder and run the following command from that folder:
 
 ```text
 dotnet new reactredux
