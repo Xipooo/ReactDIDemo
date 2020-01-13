@@ -73,4 +73,4 @@ npm install inversify inversify-react reflect-metadata --save
 
 * **Step 19**: Register `CachedWeatherService` to IoC container in [`inversify.config`](https://github.com/Xipooo/ReactDIDemo/blob/Step-19/ClientApp/src/inversify.config.ts) within a Singleton scope.
 
-* **Step 20**: Repeat Step 8 but notice state changes to Fetch Data page when navigating between _previous_ and _next_. (10 second cache)
+* **Step 20**: Replace _fetch_ call with `CachedWeatherService` in _WeatherForecasts > actionCreators_.
