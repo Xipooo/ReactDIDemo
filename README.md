@@ -59,4 +59,4 @@ npm install inversify inversify-react reflect-metadata --save
 
 * **Step 12**: Repeat Step 8.
 
-* **Step 13**: Create an [`InversifyProvider`](https://github.com/Xipooo/ReactDIDemo/blob/Step-13/ClientApp/src/providers/InversifyProvider.tsx) Wrapper Component to inject a React Context into a child component.
+* **Step 13**: Create a [`CounterProvider`](https://github.com/Xipooo/ReactDIDemo/blob/Step-13/ClientApp/src/providers/CounterProvider.tsx) Wrapper Component to inject the CounterService into the component tree with a React Context.
