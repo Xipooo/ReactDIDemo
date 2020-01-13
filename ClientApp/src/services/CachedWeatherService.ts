@@ -1,27 +1,30 @@
+import 'reflect-metadata';
+import { injectable } from "inversify";
+
+@injectable()
 export class CachedWeatherService {
+    private expiration: number = 10;
+    private cachedData: any = undefined;
+    private cachedTime: string = '';
+
     getWeather(): Promise<Response> {
-        let expiration = 10;
-        let cachedData: any = localStorage.getItem('weatherService');
-        let cachedTime: string | null = localStorage.getItem('weatherServiceCachedAt') ;
-        if (cachedData !== null && cachedTime !== null) {
-            let age = (Date.now() - parseInt(cachedTime)) / 1000;
-            if (age < expiration) {
-                return Promise.resolve(new Response(new Blob([cachedData])));
+        if (this.cachedData !== undefined && this.cachedTime !== '') {
+            let age = (Date.now() - parseInt(this.cachedTime)) / 1000;
+            if (age < this.expiration) {
+                return Promise.resolve(new Response(new Blob([this.cachedData])));
             } else {
-                localStorage.removeItem('weatherService');
-                localStorage.removeItem('weatherServiceCachedAt');
+                this.cachedData = undefined;
+                this.cachedTime = '';
             }
         }
         return fetch(`weatherforecast`).then(resp => {
             resp.clone().text().then(
                 content => {
-                    localStorage.setItem('weatherService', content);
-                    localStorage.setItem('weatherServiceCachedAt', Date.now().toString());
+                    this.cachedData = content;
+                    this.cachedTime = Date.now().toString();
                 }
             );
-            
             return resp;
         });
     }
-
 }
