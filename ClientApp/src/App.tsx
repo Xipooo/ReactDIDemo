@@ -8,13 +8,19 @@ import FetchData from './components/FetchData';
 import { Provider } from 'inversify-react';
 import { container } from './inversify.config';
 import './custom.css'
+import { CounterProvider } from './providers/CounterProvider';
+import { CounterService } from './services/CounterService';
+
+const counterService: CounterService = new CounterService();
 
 export default () => (
     <Provider container={container}>
-        <Layout>
-            <Route exact path='/' component={Home} />
-            <Route path='/counter' component={Counter} />
-            <Route path='/fetch-data/:startDateIndex?' component={FetchData} />
-        </Layout>
+        <CounterProvider service={counterService}>
+            <Layout>
+                <Route exact path='/' component={Home} />
+                <Route path='/counter' component={Counter} />
+                <Route path='/fetch-data/:startDateIndex?' component={FetchData} />
+            </Layout>
+        </CounterProvider>
     </Provider>
 );
