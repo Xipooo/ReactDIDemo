@@ -1,11 +1,11 @@
-import { Container } from 'inversify';
 import React from 'react';
+import { CounterService } from '../services/CounterService';
 
-const DIContext = React.createContext<{ container: Container | null}>({container: null});
+const DIContext = React.createContext<{ service: CounterService | null}>({service: null});
 
-const InversifyProvider: React.FunctionComponent<{ container: Container }> = (props) => {
+const InversifyProvider: React.FunctionComponent<{ service: CounterService }> = (props) => {
     return (
-        <DIContext.Provider value={{container: props.container}}>
+        <DIContext.Provider value={{service: props.service}}>
             {props.children}
         </DIContext.Provider>
     )
