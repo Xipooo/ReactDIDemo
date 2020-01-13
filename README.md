@@ -56,3 +56,5 @@ npm install inversify inversify-react reflect-metadata --save
 * **Step 10**: Repeat Step 8.
 
 * **Step 11**: Modify the [`Counter`](https://github.com/Xipooo/ReactDIDemo/blob/Step-11/ClientApp/src/components/Counter.tsx) component to be a functional component and use the .get() method on the container to obtain an instance of the `CounterService`.
+
+* **Step 12**: Create an `InversifyProvider` Wrapper Component to inject a React Context into a child component.
