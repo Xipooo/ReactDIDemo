@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { CounterService } from '../services/CounterService';
-import { container } from '../inversify.config';
+import { CounterContext } from '../providers/CounterProvider';
 
 const Counter: React.FunctionComponent = () => {
-    let _counterService = container.get(CounterService);
-    const [count, setCount] = useState(_counterService.count);
+    const { service } = React.useContext(CounterContext);
+    const [count, setCount] = useState(service ? service.count : 0);
 
     return (
         <React.Fragment>
@@ -17,9 +16,9 @@ const Counter: React.FunctionComponent = () => {
             <button type="button"
                 className="btn btn-primary btn-lg"
                 onClick={() => {
-                    if (_counterService) {
-                        _counterService.increment();
-                        setCount(_counterService.count);
+                    if (service) {
+                        service.increment();
+                        setCount(service.count);
                     }
                 }}>
                 Increment
