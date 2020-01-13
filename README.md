@@ -69,4 +69,4 @@ npm install inversify inversify-react reflect-metadata --save
 
 * **Step 17**: Revert [`Counter`](https://github.com/Xipooo/ReactDIDemo/blob/Step-17/ClientApp/src/components/Counter.tsx) back to Step 14. (How testable is this? How readable is this?)
 
-* **Step 18**: Create `CachedWeatherService` class to replace fetch in `WeatherForecasts` (line 48)
+* **Step 18**: Create [`CachedWeatherService`](https://github.com/Xipooo/ReactDIDemo/blob/Step-18/ClientApp/src/services/CachedWeatherService.ts) class to replace fetch in `WeatherForecasts` (line 48)
