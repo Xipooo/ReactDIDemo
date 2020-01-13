@@ -63,4 +63,4 @@ npm install inversify inversify-react reflect-metadata --save
 
 * **Step 14**: Modify the [`App`](https://github.com/Xipooo/ReactDIDemo/blob/Step-14/ClientApp/src/App.tsx) component to pass an instance of a CounterService to the component tree.
 
-* **Step 15**: Modify the `Counter` component to receive the CounterService instance from the `CounterContext`.
+* **Step 15**: Modify the [`Counter`](https://github.com/Xipooo/ReactDIDemo/blob/Step-15/ClientApp/src/components/Counter.tsx) component to receive the CounterService instance from the `CounterContext`. (How testable is this?)
