@@ -54,3 +54,5 @@ npm install inversify inversify-react reflect-metadata --save
 * **Step 9**: Change `CounterService` registration to use .inSingletonScope() in [`inversify.config.ts`](https://github.com/Xipooo/ReactDIDemo/blob/Step-9/ClientApp/src/inversify.config.ts).
 
 * **Step 10**: Repeat Step 8.
+
+* **Step 11**: Modify the `Counter` component to be a functional component and use the .get() method on the container to obtain an instance of the `CounterService`.
