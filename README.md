@@ -79,4 +79,4 @@ npm install inversify inversify-react reflect-metadata --save
 
 * **Step 22**: Copy render logic from `FetchData` to a new stateless component called [`Forecast`](https://github.com/Xipooo/ReactDIDemo/blob/Step-22/ClientApp/src/components/Forecast.tsx).
 
-* **Step 23**: Modify `FetchData` component to use `CachedWeatherService` instead of Redux.
+* **Step 23**: Modify [`FetchData`](https://github.com/Xipooo/ReactDIDemo/blob/Step-23/ClientApp/src/components/FetchData.tsx) component to use `CachedWeatherService` instead of Redux.
