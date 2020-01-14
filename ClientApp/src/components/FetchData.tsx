@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { WeatherForecastsState } from '../store/WeatherForecasts';
 import { resolve } from 'inversify-react';
-import { CachedWeatherService } from '../services/CachedWeatherService';
 import Forecast from './Forecast';
 import { RouteComponentProps } from 'react-router';
+import { TYPES } from '../inversify.config';
+import { IWeatherService } from '../services/IWeatherService';
 
 export default class FetchData extends React.Component<RouteComponentProps<any>, WeatherForecastsState> {
 
-  @resolve(CachedWeatherService)
-  private weatherService!: CachedWeatherService;
+  @resolve(TYPES.IWeatherService)
+  private weatherService!: IWeatherService;
 
   constructor(props: any) {
     super(props);

@@ -88,3 +88,5 @@ npm install inversify inversify-react reflect-metadata --save
 * **Step 26**: Modify [`CachedWeatherService`](https://github.com/Xipooo/ReactDIDemo/blob/Step-26/ClientApp/src/services/CachedWeatherService.ts) to implement `IWeatherService`.
 
 * **Step 27**: Modify [`inversify.config`](https://github.com/Xipooo/ReactDIDemo/blob/Step-27/ClientApp/src/inversify.config.ts) to bind an identifier to the concrete class.
+
+* **Step 28**: Modify `FetchData` to use the `IWeatherService` interface and TYPES.IWeatherService identifier to inject the class.
