@@ -1,84 +1,36 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
+import { WeatherForecastsState } from '../store/WeatherForecasts';
+import { resolve } from 'inversify-react';
+import { CachedWeatherService } from '../services/CachedWeatherService';
+import Forecast from './Forecast';
 import { RouteComponentProps } from 'react-router';
-import { Link } from 'react-router-dom';
-import { ApplicationState } from '../store';
-import * as WeatherForecastsStore from '../store/WeatherForecasts';
 
-// At runtime, Redux will merge together...
-type WeatherForecastProps =
-  WeatherForecastsStore.WeatherForecastsState // ... state we've requested from the Redux store
-  & typeof WeatherForecastsStore.actionCreators // ... plus action creators we've requested
-  & RouteComponentProps<{ startDateIndex: string }>; // ... plus incoming routing parameters
+export default class FetchData extends React.Component<RouteComponentProps<any>, WeatherForecastsState> {
 
+  @resolve(CachedWeatherService)
+  private weatherService!: CachedWeatherService;
 
-class FetchData extends React.PureComponent<WeatherForecastProps> {
-  // This method is called when the component is first added to the document
+  constructor(props: any) {
+    super(props);
+    this.state = { startDateIndex: 0, forecasts: [], isLoading: false };
+  }
+
   public componentDidMount() {
     this.ensureDataFetched();
   }
 
-  // This method is called when the route parameters change
-  public componentDidUpdate() {
-    this.ensureDataFetched();
-  }
-
-  public render() {
-    return (
-      <React.Fragment>
-        <h1 id="tabelLabel">Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server and working with URL parameters.</p>
-        {this.renderForecastsTable()}
-        {this.renderPagination()}
-      </React.Fragment>
-    );
+  public componentDidUpdate(prevProps: any, prevState: WeatherForecastsState) {
+    const startDateIndex = this.props.match.params.startDateIndex || 0;
+    if (startDateIndex && this.state.startDateIndex != startDateIndex) {
+      this.ensureDataFetched();
+    }
   }
 
   private ensureDataFetched() {
-    const startDateIndex = parseInt(this.props.match.params.startDateIndex, 10) || 0;
-    this.props.requestWeatherForecasts(startDateIndex);
+    this.weatherService.getWeather().then(data => data.json()).then(json => this.setState({ forecasts: json, startDateIndex: parseInt(this.props.match.params.startDateIndex) }));
   }
 
-  private renderForecastsTable() {
-    return (
-      <table className='table table-striped' aria-labelledby="tabelLabel">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.props.forecasts.map((forecast: WeatherForecastsStore.WeatherForecast) =>
-            <tr key={forecast.date}>
-              <td>{forecast.date}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-    );
-  }
-
-  private renderPagination() {
-    const prevStartDateIndex = (this.props.startDateIndex || 0) - 5;
-    const nextStartDateIndex = (this.props.startDateIndex || 0) + 5;
-
-    return (
-      <div className="d-flex justify-content-between">
-        <Link className='btn btn-outline-secondary btn-sm' to={`/fetch-data/${prevStartDateIndex}`}>Previous</Link>
-        {this.props.isLoading && <span>Loading...</span>}
-        <Link className='btn btn-outline-secondary btn-sm' to={`/fetch-data/${nextStartDateIndex}`}>Next</Link>
-      </div>
-    );
+  public render() {
+    return <Forecast {...this.state} />
   }
 }
-
-export default connect(
-  (state: ApplicationState) => state.weatherForecasts, // Selects which state properties are merged into the component's props
-  WeatherForecastsStore.actionCreators // Selects which action creators are merged into the component's props
-)(FetchData as any);
