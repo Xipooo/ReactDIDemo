@@ -83,4 +83,4 @@ npm install inversify inversify-react reflect-metadata --save
 
 * **Step 24**: Repeat Step 21.
 
-* **Step 25**: Create [`IWeatherService`] interface for CachedWeatherService.
+* **Step 25**: Create [`IWeatherService`](https://github.com/Xipooo/ReactDIDemo/blob/Step-25/ClientApp/src/services/IWeatherService.ts) interface for CachedWeatherService.
