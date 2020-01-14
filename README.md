@@ -93,4 +93,4 @@ npm install inversify inversify-react reflect-metadata --save
 
 * **Step 29**: Repeat Step 21 to validate interface works.
 
-* **Step 30**: Create `LocalhostWeatherService` that implements `IWeatherService` without caching.
+* **Step 30**: Create [`LocalhostWeatherService`](https://github.com/Xipooo/ReactDIDemo/blob/Step-30/ClientApp/src/services/LocalhostWeatherService.ts) that implements `IWeatherService` without caching.
