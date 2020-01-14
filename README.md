@@ -96,3 +96,5 @@ npm install inversify inversify-react reflect-metadata --save
 * **Step 30**: Create [`LocalhostWeatherService`](https://github.com/Xipooo/ReactDIDemo/blob/Step-30/ClientApp/src/services/LocalhostWeatherService.ts) that implements `IWeatherService` without caching.
 
 * **Step 31**: Modify [`inversify.config`](https://github.com/Xipooo/ReactDIDemo/blob/Step-31/ClientApp/src/inversify.config.ts) to use `LocalhostWeatherService` instead of `CachedWeatherService`.
+
+* **Step 32**: Repeat Step 21 and observe no more response caching.
