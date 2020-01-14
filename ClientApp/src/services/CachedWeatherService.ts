@@ -1,8 +1,9 @@
 import 'reflect-metadata';
 import { injectable } from "inversify";
+import { IWeatherService } from './IWeatherService';
 
 @injectable()
-export class CachedWeatherService {
+export class CachedWeatherService implements IWeatherService {
     private expiration: number = 10;
     private cachedData: any = undefined;
     private cachedTime: string = '';
