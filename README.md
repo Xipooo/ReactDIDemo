@@ -92,3 +92,5 @@ npm install inversify inversify-react reflect-metadata --save
 * **Step 28**: Modify [`FetchData`](https://github.com/Xipooo/ReactDIDemo/blob/Step-28/ClientApp/src/components/FetchData.tsx) to use the `IWeatherService` interface and TYPES.IWeatherService identifier to inject the class.
 
 * **Step 29**: Repeat Step 21 to validate interface works.
+
+* **Step 30**: Create `LocalhostWeatherService` that implements `IWeatherService` without caching.
